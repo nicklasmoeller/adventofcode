@@ -1,6 +1,10 @@
 [package]
-name = "day01"
+name = "adventofcode"
 version = "0.1.0"
 authors = ["nicklasmoeller <hello@nicklasmoeller.com>"]
+edition = "2018"
+publish = false
 
 [dependencies]
+structopt = "0.3"
+
