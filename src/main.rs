@@ -6,6 +6,7 @@ use std::path::PathBuf;
 use structopt::StructOpt;
 
 mod template;
+mod years;
 
 #[derive(StructOpt)]
 struct Opt {
@@ -55,6 +56,8 @@ fn main() {
         // A template implementation that may be copied to other days. This is the gist of defining
         // a new day.
         (42, 42) => Box::new(template::Template {}),
+
+        (2020, 1) => Box::new(years::year2020::Day01 {}),
 
         _ => panic!("Not implemented"),
     };

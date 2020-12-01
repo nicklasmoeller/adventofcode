@@ -7,6 +7,9 @@ written a utility for structuring the solutions, along with a small CLI for
 running your solvers. Feel free to fork this repository or use whatever you
 like, in your own repositories.
 
+If you do wish to fork it, you may want to checkout from
+[before I started implementing solutions](https://github.com/nicklasmoeller/adventofcode/tree/266fef46722925ea8a09fc4d0c59074124cad1d1).
+
 I'm by no means an expert Rust programmer, but have been playing with it for a
 couple of years.
 
