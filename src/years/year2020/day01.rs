@@ -17,7 +17,7 @@ impl AdventOfCode for Day01 {
 
                 match lines[next_index_from_first_traversed..]
                     .iter()
-                    .find(|second| first + *second == 2020)
+                    .find(|&second| first + second == 2020)
                 {
                     Some(matching) => Some(first * matching),
                     None => None,
@@ -48,7 +48,7 @@ impl AdventOfCode for Day01 {
 
                         match lines[next_index_from_second_traversed..]
                             .iter()
-                            .find(|third| first + *second + *third == 2020)
+                            .find(|&third| first + second + third == 2020)
                         {
                             Some(matching) => Some(first * second * matching),
                             None => None,
