@@ -27,36 +27,34 @@ impl AdventOfCode for Day03 {
 
         slopes
             .iter()
-            .map(
-                |(horizontal_steps, vertical_steps)| {
-                    input
-                        .lines()
-                        .enumerate()
-                        .filter_map(|(index, value)| {
-                            match (vertical_steps + index) % vertical_steps {
-                                0 => Some(value),
-                                _ => None,
-                            }
-                        })
-                        .fold(
-                            (0, 0),
-                            |(horizontal_steps_taken, passed_trees), line: &str| {
-                                let wrapped_position =
-                                    (line.len() + horizontal_steps_taken) % line.len();
+            .map(|(horizontal_steps, vertical_steps)| {
+                input
+                    .lines()
+                    .enumerate()
+                    .filter_map(
+                        |(index, value)| match (vertical_steps + index) % vertical_steps {
+                            0 => Some(value),
+                            _ => None,
+                        },
+                    )
+                    .fold(
+                        (0, 0),
+                        |(horizontal_steps_taken, passed_trees), line: &str| {
+                            let wrapped_position =
+                                (line.len() + horizontal_steps_taken) % line.len();
 
-                                (
-                                    horizontal_steps_taken + horizontal_steps,
-                                    if line.chars().nth(wrapped_position).unwrap() == '#' {
-                                        passed_trees + 1
-                                    } else {
-                                        passed_trees
-                                    },
-                                )
-                            },
-                        )
-                        .1
-                },
-            )
+                            (
+                                horizontal_steps_taken + horizontal_steps,
+                                if line.chars().nth(wrapped_position).unwrap() == '#' {
+                                    passed_trees + 1
+                                } else {
+                                    passed_trees
+                                },
+                            )
+                        },
+                    )
+                    .1
+            })
             .product::<usize>()
             .to_string()
     }
