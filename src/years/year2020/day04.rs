@@ -195,6 +195,7 @@ impl AdventOfCode for Day04 {
     }
 }
 
+#[cfg(test)]
 mod tests {
     use std::fs::read_to_string;
 
