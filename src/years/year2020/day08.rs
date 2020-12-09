@@ -107,14 +107,16 @@ impl AdventOfCode for Day08 {
                 new_device.boot_code[pc] = match instruction {
                     Instruction::Jmp(argument) => Instruction::Nop(argument),
                     Instruction::Nop(argument) => Instruction::Jmp(argument),
-                    op => op
+                    op => op,
                 };
 
                 match new_device.run() {
                     Ok(()) => Some(new_device.accumulator),
-                    Err(()) => None
+                    Err(()) => None,
                 }
-            }).expect("No operation replacement resulted in a succesful run").to_string()
+            })
+            .expect("No operation replacement resulted in a succesful run")
+            .to_string()
     }
 }
 
