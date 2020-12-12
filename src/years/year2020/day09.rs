@@ -15,24 +15,20 @@ impl XMAS {
         list.iter().enumerate().skip(self.preamble_size).find_map(
             |(next_number_index, &next_number)| {
                 let set = &list[next_number_index - self.preamble_size..next_number_index];
+                let will_sum = set.iter().enumerate().any(|(other_index, &other)| {
+                    if next_number < other {
+                        return false;
+                    }
 
-                if set
-                    .iter()
-                    .enumerate()
-                    .find(|(other_index, &other)| {
-                        if next_number < other {
-                            return false;
-                        }
+                    let expected = next_number - other;
 
-                        let expected = next_number - other;
+                    let lhs = &set[..other_index];
+                    let rhs = &set[other_index + 1..];
 
-                        let lhs = &set[..*other_index];
-                        let rhs = &set[*other_index + 1..];
+                    lhs.contains(&expected) || rhs.contains(&expected)
+                });
 
-                        lhs.contains(&expected) || rhs.contains(&expected)
-                    })
-                    .is_some()
-                {
+                if will_sum {
                     None
                 } else {
                     Some(next_number)
