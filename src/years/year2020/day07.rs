@@ -25,7 +25,7 @@ impl BagContainer {
                     .expect("Didnt find any rules")
                     .split(", ")
                     .filter_map(|rule| {
-                        let count = rule.split(" ").next().expect("No quantity provided");
+                        let count = rule.split(' ').next().expect("No quantity provided");
 
                         let quantity = match count {
                             "no" => None,
