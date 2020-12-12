@@ -36,8 +36,7 @@ impl BagContainer {
 
                         let bag_traits = remaining_traits
                             .rsplitn(2, ' ')
-                            .skip(1)
-                            .next()
+                            .nth(1)
                             .expect("No traits found")
                             .to_string();
 
