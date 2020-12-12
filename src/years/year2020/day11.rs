@@ -123,20 +123,16 @@ impl WaitingArea {
                 if self.include_floor {
                     Some(Tile::Floor)
                 } else {
-                    let next_x = if move_x > 0 {
-                        move_x + 1
-                    } else if move_x < 0 {
-                        move_x - 1
-                    } else {
-                        move_x
+                    let next_x = match move_x.cmp(&0) {
+                        std::cmp::Ordering::Equal => 0,
+                        std::cmp::Ordering::Greater => move_x + 1,
+                        std::cmp::Ordering::Less => move_x - 1
                     };
 
-                    let next_y = if move_y > 0 {
-                        move_y + 1
-                    } else if move_y < 0 {
-                        move_y - 1
-                    } else {
-                        move_y
+                    let next_y = match move_y.cmp(&0) {
+                        std::cmp::Ordering::Equal => 0,
+                        std::cmp::Ordering::Greater => move_y + 1,
+                        std::cmp::Ordering::Less => move_y - 1
                     };
 
                     self.get_adjacent_seat(current_index, next_x, next_y)
