@@ -83,10 +83,7 @@ impl Validate for Hex {
     fn validate(&self, input: &str) -> bool {
         input.len() == 7
             && input.chars().nth(0) == Some('#')
-            && match u64::from_str_radix(&input[1..], 16) {
-                Ok(_) => true,
-                Err(_) => false,
-            }
+            && u64::from_str_radix(&input[1..], 16).is_ok()
     }
 }
 
