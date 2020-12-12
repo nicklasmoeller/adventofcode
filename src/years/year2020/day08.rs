@@ -48,14 +48,14 @@ impl Device {
     fn run_instruction(&mut self) {
         match self.boot_code[self.pc] {
             Instruction::Acc(argument) => {
-                self.accumulator = self.accumulator + argument;
-                self.pc = self.pc + 1;
+                self.accumulator += argument;
+                self.pc += 1;
             }
             Instruction::Jmp(argument) => {
                 self.pc = (self.pc as isize + argument) as usize;
             }
             Instruction::Nop(_) => {
-                self.pc = self.pc + 1;
+                self.pc += 1;
             }
         }
     }
