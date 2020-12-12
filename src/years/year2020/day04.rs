@@ -82,7 +82,7 @@ struct Hex;
 impl Validate for Hex {
     fn validate(&self, input: &str) -> bool {
         input.len() == 7
-            && input.chars().nth(0) == Some('#')
+            && input.starts_with('#')
             && u64::from_str_radix(&input[1..], 16).is_ok()
     }
 }
