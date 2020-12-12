@@ -24,7 +24,7 @@ impl Device {
             boot_code: input
                 .lines()
                 .map(|line| {
-                    let mut instruction = line.splitn(2, " ");
+                    let mut instruction = line.splitn(2, ' ');
 
                     let operation = instruction.next().expect("No operation found");
                     let argument = instruction
