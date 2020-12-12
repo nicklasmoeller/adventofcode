@@ -126,13 +126,13 @@ impl WaitingArea {
                     let next_x = match move_x.cmp(&0) {
                         std::cmp::Ordering::Equal => 0,
                         std::cmp::Ordering::Greater => move_x + 1,
-                        std::cmp::Ordering::Less => move_x - 1
+                        std::cmp::Ordering::Less => move_x - 1,
                     };
 
                     let next_y = match move_y.cmp(&0) {
                         std::cmp::Ordering::Equal => 0,
                         std::cmp::Ordering::Greater => move_y + 1,
-                        std::cmp::Ordering::Less => move_y - 1
+                        std::cmp::Ordering::Less => move_y - 1,
                     };
 
                     self.get_adjacent_seat(current_index, next_x, next_y)
