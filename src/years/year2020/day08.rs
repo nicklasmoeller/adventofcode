@@ -19,7 +19,7 @@ struct Device {
 }
 
 impl Device {
-    fn from_string(input: &String) -> Self {
+    fn from_string(input: &str) -> Self {
         Self {
             boot_code: input
                 .lines()
