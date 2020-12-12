@@ -9,7 +9,7 @@ struct BagContainer {
 }
 
 impl BagContainer {
-    fn parse(input: &String) -> Self {
+    fn parse(input: &str) -> Self {
         let container = input
             .lines()
             .map(|line| {
@@ -41,7 +41,7 @@ impl BagContainer {
                             .expect("No traits found")
                             .to_string();
 
-                        (bag_traits.to_string(), quantity).into()
+                        (bag_traits, quantity).into()
                     })
                     .collect::<Bag>();
 
