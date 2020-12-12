@@ -52,7 +52,7 @@ impl<'a> Policy<'a> {
 }
 
 impl AdventOfCode for Day02 {
-    fn part_one(&self, input: &String) -> String {
+    fn part_one(&self, input: &str) -> String {
         let lines = input.lines();
         lines
             .filter(|&line| {
@@ -67,7 +67,7 @@ impl AdventOfCode for Day02 {
             .to_string()
     }
 
-    fn part_two(&self, input: &String) -> String {
+    fn part_two(&self, input: &str) -> String {
         let lines = input.lines();
         lines
             .filter(|&line| {

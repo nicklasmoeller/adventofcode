@@ -84,6 +84,6 @@ fn main() {
 }
 
 pub trait AdventOfCode {
-    fn part_one(&self, input: &String) -> String;
-    fn part_two(&self, input: &String) -> String;
+    fn part_one(&self, input: &str) -> String;
+    fn part_two(&self, input: &str) -> String;
 }

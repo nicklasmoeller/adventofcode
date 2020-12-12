@@ -3,7 +3,7 @@ use crate::AdventOfCode;
 pub struct Day01 {}
 
 impl AdventOfCode for Day01 {
-    fn part_one(&self, input: &String) -> String {
+    fn part_one(&self, input: &str) -> String {
         let lines = input
             .lines()
             .map(|line| line.parse::<usize>().expect("Not a number"))
@@ -27,7 +27,7 @@ impl AdventOfCode for Day01 {
             .to_string()
     }
 
-    fn part_two(&self, input: &String) -> String {
+    fn part_two(&self, input: &str) -> String {
         let lines = input
             .lines()
             .map(|line| line.parse::<usize>().expect("Not a number"))

@@ -96,7 +96,7 @@ impl<'a> Validate for OneOf<'a> {
 }
 
 impl AdventOfCode for Day04 {
-    fn part_one(&self, input: &String) -> String {
+    fn part_one(&self, input: &str) -> String {
         let required_properties = vec!["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"];
 
         let fields = input.split("\n\n");
@@ -115,7 +115,7 @@ impl AdventOfCode for Day04 {
             .to_string()
     }
 
-    fn part_two(&self, input: &String) -> String {
+    fn part_two(&self, input: &str) -> String {
         let required_properties = vec![
             (Parser {
                 field: "byr",

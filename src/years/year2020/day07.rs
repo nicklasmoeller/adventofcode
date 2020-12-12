@@ -76,11 +76,11 @@ impl BagContainer {
 pub struct Day07 {}
 
 impl AdventOfCode for Day07 {
-    fn part_one(&self, input: &String) -> String {
+    fn part_one(&self, input: &str) -> String {
         (BagContainer::parse(input).get_outer_bags_containing("shiny gold")).to_string()
     }
 
-    fn part_two(&self, input: &String) -> String {
+    fn part_two(&self, input: &str) -> String {
         (BagContainer::parse(input).get_number_of_bags("shiny gold") - 1).to_string()
     }
 }

@@ -3,7 +3,7 @@ use crate::AdventOfCode;
 pub struct Day03 {}
 
 impl AdventOfCode for Day03 {
-    fn part_one(&self, input: &String) -> String {
+    fn part_one(&self, input: &str) -> String {
         input
             .lines()
             .fold((0, 0), |(horizontal_steps, passed_trees), line: &str| {
@@ -22,7 +22,7 @@ impl AdventOfCode for Day03 {
             .to_string()
     }
 
-    fn part_two(&self, input: &String) -> String {
+    fn part_two(&self, input: &str) -> String {
         let slopes = vec![(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)];
 
         slopes

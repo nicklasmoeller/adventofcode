@@ -242,7 +242,7 @@ impl std::fmt::Display for WaitingArea {
 pub struct Day11 {}
 
 impl AdventOfCode for Day11 {
-    fn part_one(&self, input: &String) -> String {
+    fn part_one(&self, input: &str) -> String {
         let mut waiting_area = WaitingArea::new(input, true, 4);
 
         while waiting_area.advance().is_ok() {}
@@ -250,7 +250,7 @@ impl AdventOfCode for Day11 {
         waiting_area.get_occupied_seats().to_string()
     }
 
-    fn part_two(&self, input: &String) -> String {
+    fn part_two(&self, input: &str) -> String {
         let mut waiting_area = WaitingArea::new(input, false, 5);
 
         while waiting_area.advance().is_ok() {}

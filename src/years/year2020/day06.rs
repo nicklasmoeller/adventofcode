@@ -5,7 +5,7 @@ use crate::AdventOfCode;
 pub struct Day06 {}
 
 impl AdventOfCode for Day06 {
-    fn part_one(&self, input: &String) -> String {
+    fn part_one(&self, input: &str) -> String {
         input
             .split("\n\n")
             .map(|group| {
@@ -19,7 +19,7 @@ impl AdventOfCode for Day06 {
             .to_string()
     }
 
-    fn part_two(&self, input: &String) -> String {
+    fn part_two(&self, input: &str) -> String {
         input
             .split("\n\n")
             .map(|group| {

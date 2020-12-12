@@ -3,7 +3,7 @@ use crate::AdventOfCode;
 pub struct Day10 {}
 
 impl AdventOfCode for Day10 {
-    fn part_one(&self, input: &String) -> String {
+    fn part_one(&self, input: &str) -> String {
         let mut adapters: Vec<usize> = input
             .lines()
             .map(|line| line.parse::<usize>().expect("Not a number"))
@@ -24,7 +24,7 @@ impl AdventOfCode for Day10 {
         (differences.0 * differences.1).to_string()
     }
 
-    fn part_two(&self, input: &String) -> String {
+    fn part_two(&self, input: &str) -> String {
         let mut adapters: Vec<usize> = input
             .lines()
             .map(|line| line.parse::<usize>().expect("Not a number"))

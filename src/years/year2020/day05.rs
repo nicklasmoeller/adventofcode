@@ -32,7 +32,7 @@ impl Seat {
 }
 
 impl AdventOfCode for Day05 {
-    fn part_one(&self, input: &String) -> String {
+    fn part_one(&self, input: &str) -> String {
         input
             .lines()
             .map(|line| Seat::calculate_id(line))
@@ -41,7 +41,7 @@ impl AdventOfCode for Day05 {
             .to_string()
     }
 
-    fn part_two(&self, input: &String) -> String {
+    fn part_two(&self, input: &str) -> String {
         let mut seats = input
             .lines()
             .map(|line| Seat::calculate_id(line))

@@ -78,7 +78,7 @@ impl Day09 {
 }
 
 impl AdventOfCode for Day09 {
-    fn part_one(&self, input: &String) -> String {
+    fn part_one(&self, input: &str) -> String {
         let xmas = XMAS::default();
 
         let collection = Self::parse(input);
@@ -88,7 +88,7 @@ impl AdventOfCode for Day09 {
             .to_string()
     }
 
-    fn part_two(&self, input: &String) -> String {
+    fn part_two(&self, input: &str) -> String {
         let xmas = XMAS::default();
 
         let collection = Self::parse(input);

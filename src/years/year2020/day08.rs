@@ -79,7 +79,7 @@ impl Device {
 pub struct Day08 {}
 
 impl AdventOfCode for Day08 {
-    fn part_one(&self, input: &String) -> String {
+    fn part_one(&self, input: &str) -> String {
         let mut device = Device::from_string(input);
 
         match device.run() {
@@ -89,7 +89,7 @@ impl AdventOfCode for Day08 {
         .to_string()
     }
 
-    fn part_two(&self, input: &String) -> String {
+    fn part_two(&self, input: &str) -> String {
         let device = Device::from_string(input);
 
         device
