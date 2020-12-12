@@ -11,7 +11,7 @@ impl Default for XMAS {
 }
 
 impl XMAS {
-    fn find_invalid_number(&self, list: &Vec<usize>) -> Option<usize> {
+    fn find_invalid_number(&self, list: &[usize]) -> Option<usize> {
         list.iter().enumerate().skip(self.preamble_size).find_map(
             |(next_number_index, &next_number)| {
                 let set = &list[next_number_index - self.preamble_size..next_number_index];
@@ -37,7 +37,7 @@ impl XMAS {
         )
     }
 
-    fn find_encryption_weakness(&self, list: &Vec<usize>) -> Option<usize> {
+    fn find_encryption_weakness(&self, list: &[usize]) -> Option<usize> {
         match self.find_invalid_number(list) {
             Some(invalid) => list.iter().enumerate().find_map(|(number_index, _number)| {
                 let set = &list[number_index..];
@@ -69,7 +69,7 @@ impl XMAS {
 pub struct Day09;
 
 impl Day09 {
-    fn parse(input: &String) -> Vec<usize> {
+    fn parse(input: &str) -> Vec<usize> {
         input
             .lines()
             .map(|x| x.parse::<usize>().expect("Line was not a number"))
