@@ -1,2 +1,2 @@
-mod template;
-pub use template::Template;
+mod day;
+pub use day::Day;

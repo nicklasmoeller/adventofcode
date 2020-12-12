@@ -55,7 +55,7 @@ fn main() {
     let day: Box<dyn AdventOfCode> = match (opt.year, normalized_day) {
         // A template implementation that may be copied to other days. This is the gist of defining
         // a new day.
-        (42, 42) => Box::new(template::Template {}),
+        (42, 42) => Box::new(template::Day {}),
 
         (2020, 1) => Box::new(years::year2020::Day01 {}),
         (2020, 2) => Box::new(years::year2020::Day02 {}),

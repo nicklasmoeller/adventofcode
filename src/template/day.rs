@@ -1,8 +1,8 @@
 use crate::AdventOfCode;
 
-pub struct Template {}
+pub struct Day {}
 
-impl AdventOfCode for Template {
+impl AdventOfCode for Day {
     fn part_one(&self, input: &str) -> String {
         input.to_string()
     }
