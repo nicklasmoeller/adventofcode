@@ -74,6 +74,8 @@ fn main() {
         (2020, 15) => Box::new(years::year2020::Day15 {}),
         (2020, 16) => Box::new(years::year2020::Day16 {}),
 
+        (2022, 1) => Box::new(years::year2022::Day01 {}),
+
         _ => panic!("Not implemented"),
     };
 
